@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yummy</title>
+    <link rel="shortcut icon" href="./imges/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <section>
+        <div class="loading position-fixed top-0 start-0 bottom-0 end-0 bg-black justify-content-center align-items-center">
+            <i class="fa-solid fa-spinner fa-5x fa-spin"></i>
+        </div>
+        <div class="bigNavbar bg-black">
+            <div class="box p-4">
+                <div class="links">
+                    <p onclick="search()">Search</p>
+                    <p onclick="categories()">Categories</p>
+                    <p onclick="area()">Area</p>
+                    <p onclick="ingredients()">Ingredients</p>
+                    <p onclick="contact()">Contact Us</p>
+                </div>
+                <div class="nav-footer">
+                    <div class="icons">
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <div class="footer">
+                        <p>Copyright Â© 2019 All Rights <br>Reserved.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="navv bg-white py-4 px-2">
+                <div class="logo">
+                    <img src="./imges/logo.png" onclick="home();" alt="logo">
+                </div>
+                <div class="icon">
+                    <i class="fa-solid fa-bars fa-2x text-black" onclick="none();"></i>
+                </div>
+                <div class="icons">
+                        <i class="fa-solid fa-globe d-block text-black icon"></i>
+                        <i class="fa-solid fa-share-nodes text-black icon"></i>
+                </div>
+            </div>
+        </div>
+        <div class="container main py-4 vh-100">
+            <div class="row">
+            </div>
+        </div>
+        <div class="searchPage d-none ">
+            <div class="container p-5">
+                <div class="row inputSearch">
+                    <div class="col-lg-6">
+                    <div class="inp">
+                        <input type="text" class="form-control text-white bg-transparent" placeholder="Search By Name" onkeyup="displaySearchByName(this.value)">
+                    </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="inp">
+                            <input type="text" class="form-control text-white bg-transparent" placeholder="Search By Frist Letter" onkeyup="displaySearchByFirstLetter(this.value)">
+                        </div>
+                        </div>
+                </div>
+                <div class="row fatma py-3"></div>
+            </div>
+        </div>
+        <div class="areaPage d-none">
+            <div class="container py-5">
+                <div class="row nada">
+                </div>
+                <div class="row filtter d-none"></div>
+            </div>
+        </div>
+        <div class="ingradientsPage d-none">
+            <div class="container py-5">
+                <div class="row ing">
+                </div>
+                <div class="row filtterIng d-none"></div>
+            </div>
+        </div>
+        <div class="categoryPage d-none">
+            <div class="container py-5">
+                <div class="row cate"></div>
+                <div class="row filtterCate d-none"></div>
+            </div>
+        </div>
+        <div class="conactPage d-none vh-100 justify-content-center align-items-center">
+            <div class="container p-5">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="inp p-2">
+                            <input type="text" onkeyup="inputsValidation()" id="nameInput" class="form-control" placeholder="Enter Your Name">
+                        </div>
+                        <div id="nameAlert" class="alert alert-danger w-100 mt-2 d-none">
+                            Special characters and numbers not allowed
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="inp p-2">
+                            <input type="email" onkeyup="inputsValidation()" id="emailInput" class="form-control" placeholder="Enter Your Email">
+                        </div>
+                        <div id="emailAlert" class="alert alert-danger w-100 mt-2 d-none">
+                            Email not valid 
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="inp p-2">
+                            <input type="text" onkeyup="inputsValidation()" id="phoneInput" class="form-control" placeholder="Enter Your Number">
+                        </div>
+                        <div id="phoneAlert" class="alert alert-danger w-100 mt-2 d-none">
+                            Enter valid Phone Number
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="inp p-2">
+                            <input type="number" onkeyup="inputsValidation()" id="ageInput" class="form-control" placeholder="Enter Your Age">
+                        </div>
+                        <div id="ageAlert" class="alert alert-danger w-100 mt-2 d-none">
+                            Enter valid age
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="inp p-2">
+                            <input type="password" onkeyup="inputsValidation()" id="passwordInput" class="form-control" placeholder="Enter Your Password">
+                        </div>
+                        <div id="passwordAlert" class="alert alert-danger w-100 mt-2 d-none">
+                            Enter valid password 
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="inp p-2">
+                            <input type="password" onkeyup="inputsValidation()" id="repasswordInput" class="form-control" placeholder="Repassword">
+                        </div>
+                        <div id="repasswordAlert" class="alert alert-danger w-100 mt-2 d-none">
+                            Enter valid repassword 
+                        </div>
+                    </div>
+                    <div class="col-lg-12 text-center">
+                        <div class="inp p-2">
+                            <button id="submitBtn" class="btn btn-outline-danger" disabled>Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./js/jquery-3.6.4.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
