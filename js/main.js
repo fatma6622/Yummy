@@ -486,8 +486,8 @@ function categories(){
         for(let i=0;i<foodCategories.categories.length;i++){
         cartona+=`
         <div class="col-lg-3 py-3 test1 ">
-        <div class="card position-relative" onclick="detailsCategory('${foodCategories.categories[i].strCategory}');">
-        <img src=${foodCategories.categories[i].strCategoryThumb} class="b_g" alt="not found">
+        <div class="card b_g" position-relative" onclick="detailsCategory('${foodCategories.categories[i].strCategory}');">
+        <img src=${foodCategories.categories[i].strCategoryThumb} alt="not found">
         <div class="position-absolute top-0 start-0 bottom-0 end-0 d-flex justify-content-start align-items-center p-3 con"><h3>${foodCategories.categories[i].strCategory}</div>
         </div>
     </div>
